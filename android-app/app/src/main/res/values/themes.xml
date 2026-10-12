@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Tema de la app. DayNight: claro u oscuro según el sistema. -->
+    <style name="Theme.MiApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primario</item>
+    </style>
+</resources>

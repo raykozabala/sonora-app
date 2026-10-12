@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configura tu cuenta — Aurea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+  <div class="wizard-page">
+    <div class="wizard">
+      <div class="wizard-head">
+        <a href="index.html" class="brand">
+          <span class="brand-mark" aria-hidden="true">A</span>
+          <span class="brand-name">Aurea</span>
+        </a>
+        <div class="stepper" aria-label="Progreso">
+          <span class="step-dot active" data-dot="1">1</span>
+          <span class="step-line"></span>
+          <span class="step-dot" data-dot="2">2</span>
+          <span class="step-line"></span>
+          <span class="step-dot" data-dot="3">3</span>
+        </div>
+      </div>
+
+      <form id="onboardingForm">
+        <div class="wizard-body">
+          <!-- Paso 1 -->
+          <section class="wizard-step active" data-step="1">
+            <h2>Cuéntanos sobre tu negocio</h2>
+            <p class="lead">Usaremos esto para personalizar tu panel.</p>
+            <div class="field">
+              <label for="company">Nombre de la empresa o proyecto</label>
+              <input id="company" name="company" type="text" placeholder="Ej. Verdant Studio" />
+              <span class="error"></span>
+            </div>
+            <div class="field">
+              <label for="role">Tu cargo</label>
+              <input id="role" name="role" type="text" placeholder="Ej. Fundadora" />
+            </div>
+            <div class="field">
+              <label for="sector">Sector</label>
+              <select id="sector" name="sector">
+                <option value="">Selecciona un sector…</option>
+                <option value="tecnologia">Tecnología / SaaS</option>
+                <option value="retail">Retail / E-commerce</option>
+                <option value="servicios">Servicios profesionales</option>
+                <option value="salud">Salud</option>
+                <option value="educacion">Educación</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+          </section>
+
+          <!-- Paso 2 -->
+          <section class="wizard-step" data-step="2">
+            <h2>Personaliza tu marca</h2>
+            <p class="lead">Elige el color y el tema que prefieras. Podrás cambiarlo luego.</p>
+
+            <div class="field">
+              <label>Color de marca</label>
+              <div class="swatches" id="swatches">
+                <button type="button" class="swatch selected" data-color="#4f46e5" style="background:#4f46e5" aria-label="Índigo"></button>
+                <button type="button" class="swatch" data-color="#0ea5e9" style="background:#0ea5e9" aria-label="Azul"></button>
+                <button type="button" class="swatch" data-color="#10b981" style="background:#10b981" aria-label="Verde"></button>
+                <button type="button" class="swatch" data-color="#f59e0b" style="background:#f59e0b" aria-label="Ámbar"></button>
+                <button type="button" class="swatch" data-color="#ef4444" style="background:#ef4444" aria-label="Rojo"></button>
+                <button type="button" class="swatch" data-color="#ec4899" style="background:#ec4899" aria-label="Rosa"></button>
+                <label class="swatch" style="display:grid;place-items:center;border:1px dashed var(--border);cursor:pointer" title="Color personalizado">
+                  <input type="color" id="customColor" value="#4f46e5" style="width:100%;height:100%;border:0;background:transparent;cursor:pointer" />
+                </label>
+              </div>
+            </div>
+
+            <div class="field" style="margin-top:22px">
+              <label>Tema de la interfaz</label>
+              <div class="choice-grid">
+                <div class="choice selected" data-theme-choice="light">
+                  <strong>Claro</strong><span>Limpio y luminoso</span>
+                </div>
+                <div class="choice" data-theme-choice="dark">
+                  <strong>Oscuro</strong><span>Cómodo de noche</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="field" style="margin-top:22px">
+              <label>Vista previa</label>
+              <div class="card" style="padding:16px">
+                <div class="row-between">
+                  <strong id="previewName">Tu empresa</strong>
+                  <span class="btn btn-primary btn-sm" id="previewBtn">Botón</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Paso 3 -->
+          <section class="wizard-step" data-step="3">
+            <h2>¿Cuál es tu objetivo principal?</h2>
+            <p class="lead">Ajustaremos el panel a lo que más te importa.</p>
+            <div class="choice-grid">
+              <div class="choice" data-goal="vender">
+                <strong>Vender más</strong><span>Aumentar conversiones y ventas</span>
+              </div>
+              <div class="choice" data-goal="crecer">
+                <strong>Crecer</strong><span>Más tráfico y reconocimiento</span>
+              </div>
+              <div class="choice" data-goal="organizar">
+                <strong>Organizarme</strong><span>Ordenar tareas y proyectos</span>
+              </div>
+              <div class="choice" data-goal="lanzar">
+                <strong>Lanzar</strong><span>Sacar algo nuevo al mercado</span>
+              </div>
+            </div>
+
+            <div class="setting-row" style="margin-top:22px;border:0;padding-top:20px">
+              <div class="info">
+                <strong>Recibir novedades por email</strong>
+                <span>Consejos y actualizaciones de vez en cuando.</span>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="notifications" checked />
+                <span class="track"></span><span class="thumb"></span>
+              </label>
+            </div>
+          </section>
+        </div>
+
+        <div class="wizard-foot">
+          <button type="button" class="btn btn-ghost" id="backBtn" disabled>Atrás</button>
+          <span class="hint" id="stepHint">Paso 1 de 3</span>
+          <button type="button" class="btn btn-primary" id="nextBtn">Continuar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/ui.js"></script>
+  <script src="assets/store.js"></script>
+  <script src="onboarding.js"></script>
+</body>
+</html>

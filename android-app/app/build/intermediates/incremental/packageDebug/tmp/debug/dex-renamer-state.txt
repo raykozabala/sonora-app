@@ -1,0 +1,10 @@
+#Sun Oct 11 17:25:50 BOT 2026
+base.2=/Users/rayko/Documents/Proyecto predeterminado/android-app/app/build/intermediates/dex/debug/mergeProjectDexDebug/2/classes.dex
+path.2=2/classes.dex
+base.1=/Users/rayko/Documents/Proyecto predeterminado/android-app/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+path.1=0/classes.dex
+base.0=/Users/rayko/Documents/Proyecto predeterminado/android-app/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
+renamed.0=classes.dex
+path.0=classes.dex

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurea — Consultoría digital de alto impacto</title>
+  <meta name="description" content="Aurea es un estudio de consultoría digital que ayuda a empresas a crecer con estrategia, diseño y tecnología." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Barra de progreso de lectura -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Encabezado / navegación -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand" aria-label="Aurea, inicio">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span class="brand-name">Aurea</span>
+      </a>
+
+      <nav class="nav" id="primaryNav" aria-label="Navegación principal">
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#proyectos" class="nav-link">Proyectos</a>
+        <a href="#testimonios" class="nav-link">Testimonios</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+        <a href="login.html" class="nav-link nav-mobile-only">Iniciar sesión</a>
+        <a href="register.html" class="nav-link nav-mobile-only">Crear cuenta</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Cambiar tema" title="Cambiar tema">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+        </button>
+
+        <a href="login.html" class="nav-link account-link">Iniciar sesión</a>
+        <a href="register.html" class="btn btn-primary btn-sm header-cta" id="headerCta">Crear cuenta</a>
+
+        <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primaryNav">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="inicio">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <span class="pill">
+            <span class="pill-dot" aria-hidden="true"></span>
+            Estudio de consultoría digital
+          </span>
+          <h1 class="hero-title">
+            Convertimos ideas en <span class="grad">crecimiento medible</span>.
+          </h1>
+          <p class="hero-sub">
+            Estrategia, diseño y tecnología en un solo equipo. Ayudamos a empresas ambiciosas
+            a lanzar productos, mejorar sus canales digitales y multiplicar sus resultados.
+          </p>
+          <div class="hero-actions">
+            <a href="#contacto" class="btn btn-primary">Empezar un proyecto</a>
+            <a href="#proyectos" class="btn btn-ghost">Ver nuestro trabajo</a>
+          </div>
+
+          <dl class="hero-stats">
+            <div class="stat">
+              <dt class="stat-value" data-count="120" data-suffix="+">0</dt>
+              <dd class="stat-label">Proyectos entregados</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat-value" data-count="98" data-suffix="%">0</dt>
+              <dd class="stat-label">Clientes satisfechos</dd>
+            </div>
+            <div class="stat">
+              <dt class="stat-value" data-count="14" data-suffix=" años">0</dt>
+              <dd class="stat-label">De experiencia</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="glass-card card-main">
+            <div class="card-head">
+              <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+              <span class="card-title">Panel de crecimiento</span>
+            </div>
+            <div class="bars">
+              <span class="bar" style="--h: 42%"></span>
+              <span class="bar" style="--h: 58%"></span>
+              <span class="bar" style="--h: 35%"></span>
+              <span class="bar" style="--h: 74%"></span>
+              <span class="bar" style="--h: 62%"></span>
+              <span class="bar" style="--h: 88%"></span>
+              <span class="bar bar-accent" style="--h: 96%"></span>
+            </div>
+            <div class="card-foot">
+              <span class="trend">▲ 32% conversión</span>
+              <span class="muted">últimos 6 meses</span>
+            </div>
+          </div>
+
+          <div class="glass-card card-float">
+            <span class="chip">+2.480 leads</span>
+            <span class="muted small">este trimestre</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Nexo Bank</span><span>•</span><span>Verdant</span><span>•</span><span>Orbit Labs</span><span>•</span><span>Cobalto</span><span>•</span><span>Mercado Sur</span><span>•</span>
+          <span>Nexo Bank</span><span>•</span><span>Verdant</span><span>•</span><span>Orbit Labs</span><span>•</span><span>Cobalto</span><span>•</span><span>Mercado Sur</span><span>•</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Servicios</span>
+          <h2 class="section-title">Todo lo que tu negocio necesita para crecer online</h2>
+          <p class="section-sub">
+            Un equipo multidisciplinar que cubre la estrategia, la ejecución y la medición.
+          </p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="feature reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M7 15l3-3 3 3 5-6"></path></svg>
+            </span>
+            <h3 class="feature-title">Estrategia digital</h3>
+            <p class="feature-text">Definimos objetivos, métricas y una hoja de ruta clara para que cada esfuerzo tenga retorno.</p>
+          </article>
+
+          <article class="feature reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18M9 21V9"></path></svg>
+            </span>
+            <h3 class="feature-title">Diseño de producto</h3>
+            <p class="feature-text">Interfaces limpias, consistentes y centradas en el usuario que convierten visitas en clientes.</p>
+          </article>
+
+          <article class="feature reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M16 21h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path><path d="M10 10l4 4M14 10l-4 4"></path></svg>
+            </span>
+            <h3 class="feature-title">Desarrollo web</h3>
+            <p class="feature-text">Sitios rápidos, accesibles y optimizados para SEO, construidos con tecnología moderna.</p>
+          </article>
+
+          <article class="feature reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"></path></svg>
+            </span>
+            <h3 class="feature-title">Marca e identidad</h3>
+            <p class="feature-text">Construimos marcas memorables con personalidad, sistema visual y guías de uso.</p>
+          </article>
+
+          <article class="feature reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"></path><path d="M12 7v5l3 3"></path></svg>
+            </span>
+            <h3 class="feature-title">Marketing de resultados</h3>
+            <p class="feature-text">Campañas, contenido y analítica para atraer al público correcto en el momento correcto.</p>
+          </article>
+
+          <article class="feature reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+            </span>
+            <h3 class="feature-title">Soporte y evolución</h3>
+            <p class="feature-text">Acompañamiento continuo, mantenimiento y mejora constante de tus plataformas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section class="section section-alt" id="nosotros">
+      <div class="container split">
+        <div class="split-copy reveal">
+          <span class="eyebrow">Nosotros</span>
+          <h2 class="section-title">Un socio que se involucra, no un proveedor más</h2>
+          <p class="section-sub">
+            Nacimos en 2011 con una idea simple: el diseño y la tecnología deben servir a los
+            objetivos del negocio. Trabajamos en equipos pequeños, cercanos y con foco en resultados.
+          </p>
+          <ul class="checklist">
+            <li>Equipos dedicados por proyecto</li>
+            <li>Comunicación clara y sin intermediarios</li>
+            <li>Entregas iterativas cada dos semanas</li>
+            <li>Medición de resultados desde el día uno</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary">Hablemos de tu caso</a>
+        </div>
+
+        <div class="split-visual reveal" aria-hidden="true">
+          <div class="about-card">
+            <div class="about-avatar">LM</div>
+            <p class="about-quote">«Entendieron el negocio antes de proponer soluciones. Eso lo cambia todo.»</p>
+            <div class="about-meta">
+              <strong>Laura Méndez</strong>
+              <span class="muted">CEO, Verdant</span>
+            </div>
+          </div>
+          <div class="about-badges">
+            <span class="badge">★ 4.9 / 5 en Clutch</span>
+            <span class="badge">ISO 27001</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Proyectos</span>
+          <h2 class="section-title">Trabajo reciente que generó impacto</h2>
+          <p class="section-sub">Una selección de proyectos representativos de nuestro equipo.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="project reveal">
+            <div class="project-thumb thumb-1" aria-hidden="true"></div>
+            <div class="project-body">
+              <span class="tag">Fintech</span>
+              <h3 class="project-title">Nexo Bank — Onboarding digital</h3>
+              <p class="project-text">Rediseño del alta de clientes: 40% menos abandono y apertura en 3 minutos.</p>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-thumb thumb-2" aria-hidden="true"></div>
+            <div class="project-body">
+              <span class="tag">Retail</span>
+              <h3 class="project-title">Mercado Sur — E-commerce</h3>
+              <p class="project-text">Nueva tienda online con +65% en ventas y una experiencia de compra impecable.</p>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-thumb thumb-3" aria-hidden="true"></div>
+            <div class="project-body">
+              <span class="tag">Salud</span>
+              <h3 class="project-title">Orbit Labs — Plataforma B2B</h3>
+              <p class="project-text">Portal de gestión para clínicas con dashboards en tiempo real y roles avanzados.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="section section-alt" id="testimonios">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Testimonios</span>
+          <h2 class="section-title">Lo que dicen quienes trabajan con nosotros</h2>
+        </div>
+
+        <div class="grid grid-3">
+          <figure class="quote reveal">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>Profesionales, rápidos y muy atentos al detalle. Superaron nuestras expectativas en cada entrega.</blockquote>
+            <figcaption><strong>Diego Ramos</strong><span class="muted">Director, Cobalto</span></figcaption>
+          </figure>
+
+          <figure class="quote reveal">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>Pasamos de una web anticuada a una plataforma que nuestros clientes adoran usar cada día.</blockquote>
+            <figcaption><strong>Marina Cole</strong><span class="muted">CMO, Nexo Bank</span></figcaption>
+          </figure>
+
+          <figure class="quote reveal">
+            <div class="stars" aria-label="5 de 5 estrellas">★★★★★</div>
+            <blockquote>La combinación de estrategia y ejecución técnica es exactamente lo que necesitábamos.</blockquote>
+            <figcaption><strong>Javier Núñez</strong><span class="muted">Fundador, Orbit Labs</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section" id="contacto">
+      <div class="container contact">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">Contacto</span>
+          <h2 class="section-title">Cuéntanos qué quieres construir</h2>
+          <p class="section-sub">
+            Rellena el formulario y te responderemos en menos de 24 horas laborables.
+            Sin compromiso.
+          </p>
+
+          <ul class="contact-list">
+            <li>
+              <span class="contact-ico" aria-hidden="true">✉</span>
+              <a href="mailto:hola@aurea.studio">hola@aurea.studio</a>
+            </li>
+            <li>
+              <span class="contact-ico" aria-hidden="true">☎</span>
+              <a href="tel:+34900000000">+34 900 000 000</a>
+            </li>
+            <li>
+              <span class="contact-ico" aria-hidden="true">⌖</span>
+              <span>Calle Gran Vía 42, Madrid</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required />
+            <span class="error" data-error-for="name"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required />
+            <span class="error" data-error-for="email"></span>
+          </div>
+          <div class="field">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" rows="4" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+            <span class="error" data-error-for="message"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Franja CTA -->
+    <section class="cta-band">
+      <div class="container cta-inner reveal">
+        <div>
+          <h2 class="cta-title">¿Listo para dar el siguiente paso?</h2>
+          <p class="cta-sub">Crea tu cuenta gratis y configura tu panel en menos de un minuto.</p>
+        </div>
+        <a href="register.html" class="btn btn-light" id="ctaBandBtn">Crear cuenta gratis</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#inicio" class="brand">
+          <span class="brand-mark" aria-hidden="true">A</span>
+          <span class="brand-name">Aurea</span>
+        </a>
+        <p class="muted small">Consultoría digital de alto impacto.<br />© <span id="year"></span> Aurea Studio. Todos los derechos reservados.</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Enlaces del pie">
+        <div>
+          <h4>Empresa</h4>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+        <div>
+          <h4>Servicios</h4>
+          <a href="#servicios">Estrategia</a>
+          <a href="#servicios">Diseño</a>
+          <a href="#servicios">Desarrollo</a>
+        </div>
+        <div>
+          <h4>Síguenos</h4>
+          <a href="#" rel="noopener">LinkedIn</a>
+          <a href="#" rel="noopener">Instagram</a>
+          <a href="#" rel="noopener">X</a>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" type="button" aria-label="Volver arriba">↑</button>
+
+  <script src="script.js"></script>
+  <script src="assets/store.js"></script>
+  <script>
+    /* Ajusta las llamadas de la portada si ya hay sesión iniciada */
+    (function () {
+      var u = window.Aurea && Aurea.currentUser && Aurea.currentUser();
+      if (!u) return;
+      var cta = document.getElementById("headerCta");
+      if (cta) { cta.textContent = "Ir a mi panel"; cta.href = "app.html"; }
+      var band = document.getElementById("ctaBandBtn");
+      if (band) { band.textContent = "Ir a mi panel"; band.href = "app.html"; }
+      var login = document.querySelector(".account-link");
+      if (login) { login.textContent = "Mi panel"; login.href = "app.html"; }
+    })();
+  </script>
+</body>
+</html>

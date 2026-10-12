@@ -1,0 +1,9 @@
+R_DEF: Internal format may change without notice
+local
+color primario
+drawable ic_launcher
+string app_name
+string boton
+string contador
+string listo
+style Theme.MiApp

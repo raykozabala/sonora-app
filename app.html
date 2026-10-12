@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi panel — Aurea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Barra lateral -->
+    <aside class="sidebar" id="sidebar">
+      <a href="index.html" class="brand">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span class="brand-name">Aurea</span>
+      </a>
+
+      <nav class="side-nav" aria-label="Secciones del panel">
+        <button class="side-link active" data-view="resumen" type="button">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg>
+          Resumen
+        </button>
+        <button class="side-link" data-view="tareas" type="button">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+          Tareas
+        </button>
+        <button class="side-link" data-view="perfil" type="button">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+          Perfil
+        </button>
+        <button class="side-link" data-view="ajustes" type="button">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path></svg>
+          Ajustes
+        </button>
+      </nav>
+
+      <div class="side-foot">
+        <div class="side-user">
+          <span class="avatar" id="sideAvatar">A</span>
+          <span class="who">
+            <strong id="sideName">Usuario</strong>
+            <span id="sideCompany">—</span>
+          </span>
+        </div>
+        <button class="btn btn-ghost btn-sm btn-block" id="logoutBtn" type="button" style="justify-content:center">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="M16 17l5-5-5-5M21 12H9"></path></svg>
+          Cerrar sesión
+        </button>
+      </div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <!-- Contenido -->
+    <div class="main">
+      <header class="topbar">
+        <div style="display:flex;align-items:center;gap:12px">
+          <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Abrir menú">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          </button>
+          <div>
+            <h1 id="pageTitle">Resumen</h1>
+            <span class="small muted" id="pageSub">Tu actividad de un vistazo</span>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Cambiar tema">
+            <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path></svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+          </button>
+        </div>
+      </header>
+
+      <div class="content">
+        <!-- ===== Resumen ===== -->
+        <section class="view active" data-view="resumen">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="label">Tareas activas</div>
+              <div class="value" id="statActive">0</div>
+              <div class="delta up">Pendientes por hacer</div>
+            </div>
+            <div class="stat-card">
+              <div class="label">Completadas</div>
+              <div class="value" id="statDone">0</div>
+              <div class="delta up" id="statDoneDelta">0% del total</div>
+            </div>
+            <div class="stat-card">
+              <div class="label">Visitas al panel</div>
+              <div class="value" id="statVisits">0</div>
+              <div class="delta up">Desde tu registro</div>
+            </div>
+            <div class="stat-card">
+              <div class="label">Inicios de sesión</div>
+              <div class="value" id="statLogins">0</div>
+              <div class="delta up">Bienvenido de nuevo</div>
+            </div>
+          </div>
+
+          <div class="split-2">
+            <div class="card">
+              <div class="card-title">Actividad de la semana</div>
+              <p class="card-sub">Tareas completadas por día</p>
+              <div class="bars-wrap" id="chart"></div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Tu objetivo</div>
+              <p class="card-sub" id="goalLabel">—</p>
+              <div class="row-between" style="margin-top:16px">
+                <span class="muted small">Progreso general</span>
+                <strong id="goalPct">0%</strong>
+              </div>
+              <div class="progress"><span id="goalBar" style="width:0%"></span></div>
+              <div style="margin-top:20px" class="gap-12">
+                <button class="btn btn-primary btn-block" data-goto="tareas" type="button">Gestionar tareas</button>
+                <button class="btn btn-ghost btn-block" data-goto="perfil" type="button">Editar mi perfil</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="row-between">
+              <div>
+                <div class="card-title">Tareas pendientes</div>
+                <p class="card-sub">Lo que tienes por delante</p>
+              </div>
+              <button class="btn btn-ghost btn-sm" data-goto="tareas" type="button">Ver todas</button>
+            </div>
+            <div class="tasks" id="recentTasks"></div>
+          </div>
+        </section>
+
+        <!-- ===== Tareas ===== -->
+        <section class="view" data-view="tareas">
+          <div class="card">
+            <div class="card-title">Añadir tarea</div>
+            <p class="card-sub">Escribe y pulsa Enter o el botón.</p>
+            <form class="task-form" id="taskForm">
+              <input type="text" id="taskInput" placeholder="¿Qué necesitas hacer?" maxlength="140" />
+              <button class="btn btn-primary" type="submit">Añadir</button>
+            </form>
+            <span class="error" id="taskError"></span>
+          </div>
+
+          <div class="card">
+            <div class="row-between">
+              <div>
+                <div class="card-title">Mis tareas</div>
+                <p class="card-sub" id="tasksSummary">0 completadas</p>
+              </div>
+              <button class="btn btn-ghost btn-sm" id="clearDone" type="button">Borrar completadas</button>
+            </div>
+            <div class="progress" style="margin:6px 0 18px"><span id="tasksBar" style="width:0%"></span></div>
+            <div class="tasks" id="taskList"></div>
+          </div>
+        </section>
+
+        <!-- ===== Perfil ===== -->
+        <section class="view" data-view="perfil">
+          <div class="split-2">
+            <div class="card">
+              <div class="card-title">Datos personales</div>
+              <p class="card-sub">Actualiza tu información de perfil.</p>
+              <form id="profileForm" class="gap-12">
+                <div class="field">
+                  <label for="pName">Nombre</label>
+                  <input id="pName" type="text" />
+                </div>
+                <div class="field">
+                  <label for="pEmail">Email</label>
+                  <input id="pEmail" type="email" disabled />
+                </div>
+                <div class="field">
+                  <label for="pRole">Cargo</label>
+                  <input id="pRole" type="text" placeholder="Ej. Fundadora" />
+                </div>
+                <div class="field">
+                  <label for="pCompany">Empresa</label>
+                  <input id="pCompany" type="text" placeholder="Nombre de tu empresa" />
+                </div>
+                <div class="field">
+                  <label for="pBio">Sobre mí</label>
+                  <textarea id="pBio" placeholder="Una breve descripción…"></textarea>
+                </div>
+                <button class="btn btn-primary" type="submit">Guardar cambios</button>
+              </form>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Tu tarjeta</div>
+              <p class="card-sub">Así te ven en el panel.</p>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:14px;padding:14px 0" >
+                <span class="avatar" id="bigAvatar" style="width:82px;height:82px;font-size:1.6rem">A</span>
+                <div style="text-align:center">
+                  <strong id="cardName" style="font-size:1.15rem"></strong>
+                  <div class="muted small" id="cardRole"></div>
+                </div>
+                <span class="muted small" id="cardCompany"></span>
+                <p class="muted small" id="cardBio" style="text-align:center;max-width:32ch"></p>
+                <span class="badge muted small" id="memberSince"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Ajustes ===== -->
+        <section class="view" data-view="ajustes">
+          <div class="split-2">
+            <div class="card">
+              <div class="card-title">Apariencia</div>
+              <p class="card-sub">Personaliza el aspecto del panel.</p>
+
+              <div class="field">
+                <label>Color de marca</label>
+                <div class="swatches" id="settingsSwatches">
+                  <button type="button" class="swatch" data-color="#4f46e5" style="background:#4f46e5" aria-label="Índigo"></button>
+                  <button type="button" class="swatch" data-color="#0ea5e9" style="background:#0ea5e9" aria-label="Azul"></button>
+                  <button type="button" class="swatch" data-color="#10b981" style="background:#10b981" aria-label="Verde"></button>
+                  <button type="button" class="swatch" data-color="#f59e0b" style="background:#f59e0b" aria-label="Ámbar"></button>
+                  <button type="button" class="swatch" data-color="#ef4444" style="background:#ef4444" aria-label="Rojo"></button>
+                  <button type="button" class="swatch" data-color="#ec4899" style="background:#ec4899" aria-label="Rosa"></button>
+                  <label class="swatch" style="display:grid;place-items:center;border:1px dashed var(--border);cursor:pointer" title="Color personalizado">
+                    <input type="color" id="settingsCustomColor" style="width:100%;height:100%;border:0;background:transparent;cursor:pointer" />
+                  </label>
+                </div>
+              </div>
+
+              <div class="field" style="margin-top:20px">
+                <label>Tema</label>
+                <div class="choice-grid">
+                  <div class="choice" data-s-theme="light"><strong>Claro</strong><span>Luminoso</span></div>
+                  <div class="choice" data-s-theme="dark"><strong>Oscuro</strong><span>De noche</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Preferencias</div>
+              <p class="card-sub">Ajusta tu experiencia.</p>
+
+              <div class="field">
+                <label for="sSector">Sector</label>
+                <select id="sSector">
+                  <option value="">Sin especificar</option>
+                  <option value="tecnologia">Tecnología / SaaS</option>
+                  <option value="retail">Retail / E-commerce</option>
+                  <option value="servicios">Servicios profesionales</option>
+                  <option value="salud">Salud</option>
+                  <option value="educacion">Educación</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <div class="field" style="margin-top:16px">
+                <label>Objetivo principal</label>
+                <div class="choice-grid" id="goalChoices">
+                  <div class="choice" data-s-goal="vender"><strong>Vender más</strong><span>Conversiones</span></div>
+                  <div class="choice" data-s-goal="crecer"><strong>Crecer</strong><span>Tráfico</span></div>
+                  <div class="choice" data-s-goal="organizar"><strong>Organizarme</strong><span>Orden</span></div>
+                  <div class="choice" data-s-goal="lanzar"><strong>Lanzar</strong><span>Novedades</span></div>
+                </div>
+              </div>
+
+              <div class="setting-row" style="margin-top:16px">
+                <div class="info">
+                  <strong>Novedades por email</strong>
+                  <span>Consejos y actualizaciones.</span>
+                </div>
+                <label class="switch">
+                  <input type="checkbox" id="sNotifications" />
+                  <span class="track"></span><span class="thumb"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Cuenta</div>
+            <p class="card-sub">Opciones sensibles. Actúa con cuidado.</p>
+            <div class="row-between" style="flex-wrap:wrap;gap:14px">
+              <div>
+                <strong style="display:block">Cerrar sesión</strong>
+                <span class="muted small">Sal de tu cuenta en este dispositivo.</span>
+              </div>
+              <button class="btn btn-ghost" id="logoutBtn2" type="button">Cerrar sesión</button>
+            </div>
+            <div class="row-between" style="flex-wrap:wrap;gap:14px;margin-top:18px;padding-top:18px;border-top:1px solid var(--border)">
+              <div>
+                <strong style="display:block;color:var(--danger)">Eliminar cuenta</strong>
+                <span class="muted small">Borra permanentemente tu cuenta y tus datos.</span>
+              </div>
+              <button class="btn btn-danger" id="deleteAccount" type="button">Eliminar cuenta</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/ui.js"></script>
+  <script src="assets/store.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

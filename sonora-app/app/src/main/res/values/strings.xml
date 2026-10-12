@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sonora</string>
+
+    <!-- Navegación -->
+    <string name="nav_buscar">Buscar</string>
+    <string name="nav_biblioteca">Biblioteca</string>
+    <string name="nav_playlists">Playlists</string>
+    <string name="nav_recomendados">Para ti</string>
+
+    <!-- Buscar -->
+    <string name="hint_buscar">Busca canciones, vídeos, artistas…</string>
+    <string name="buscar_vacio">Busca música en YouTube, YouTube Music y SoundCloud.</string>
+    <string name="buscando">Buscando…</string>
+    <string name="sin_resultados">Sin resultados. Prueba con otra búsqueda.</string>
+
+    <!-- Formatos -->
+    <string name="titulo_formatos">Elige formato y calidad</string>
+    <string name="subtitulo_formatos">Disponible en estas fuentes</string>
+    <string name="descargar_mp3">Descargar MP3</string>
+    <string name="descargar_video">Descargar vídeo</string>
+    <string name="descargando">Descargando…</string>
+    <string name="descarga_lista">Descarga completada ✓</string>
+
+    <!-- Biblioteca -->
+    <string name="biblioteca_vacia">Tu biblioteca está vacía.\nDescarga algo desde la pestaña Buscar.</string>
+    <string name="playlists_vacia">Aún no tienes playlists.\nCrea una con el botón +</string>
+    <string name="recomendados_vacia">Reproduciendo algo para descubrir recomendaciones.</string>
+
+    <!-- Servidor -->
+    <string name="servidor_titulo">Servidor</string>
+    <string name="hint_servidor">http://192.168.1.132:8080</string>
+</resources>

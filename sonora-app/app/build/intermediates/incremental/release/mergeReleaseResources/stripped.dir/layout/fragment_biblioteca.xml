@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Pantalla de la biblioteca (música descargada) con LinearLayout. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tu biblioteca"
+        android:textColor="@color/texto"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/contador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/texto_suave"
+        android:textSize="13sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lista"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:padding="12dp" />
+
+    <TextView
+        android:id="@+id/textoVacio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/biblioteca_vacia"
+        android:textColor="@color/texto_suave"
+        android:textAlignment="center"
+        android:lineSpacingExtra="4dp"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+</LinearLayout>

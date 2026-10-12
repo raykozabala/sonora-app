@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primario">#4F46E5</color>
+    <string name="app_name">Mi App</string>
+    <string name="boton">Tócame</string>
+    <string name="contador">Toques: %1$d</string>
+    <string name="listo">Todo listo ✅\nEl entorno Android compila correctamente.</string>
+    <style name="Theme.MiApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primario</item>
+    </style>
+</resources>

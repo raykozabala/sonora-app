@@ -1,0 +1,9 @@
+{
+  "name": "aurea-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio web profesional + app de cuentas (login, registro, onboarding y panel) en HTML/CSS/JS puro.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

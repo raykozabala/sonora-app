@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mi App</string>
+    <string name="listo">Todo listo ✅\nEl entorno Android compila correctamente.</string>
+    <string name="boton">Tócame</string>
+    <string name="contador">Toques: %1$d</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="acento">#22D3EE</color>
+    <color name="error">#F87171</color>
+    <color name="exito">#34D399</color>
+    <color name="fondo">#0B0B12</color>
+    <color name="primario">#8B5CF6</color>
+    <color name="primario_oscuro">#6D28D9</color>
+    <color name="superficie">#16161F</color>
+    <color name="superficie_alta">#22222E</color>
+    <color name="texto">#F4F4F8</color>
+    <color name="texto_suave">#9A9AAE</color>
+    <string name="app_name">Sonora</string>
+    <string name="biblioteca_vacia">Tu biblioteca está vacía.\nDescarga algo desde la pestaña Buscar.</string>
+    <string name="buscando">Buscando…</string>
+    <string name="buscar_vacio">Busca música en YouTube, YouTube Music y SoundCloud.</string>
+    <string name="descarga_lista">Descarga completada ✓</string>
+    <string name="descargando">Descargando…</string>
+    <string name="descargar_mp3">Descargar MP3</string>
+    <string name="descargar_video">Descargar vídeo</string>
+    <string name="hint_buscar">Busca canciones, vídeos, artistas…</string>
+    <string name="hint_servidor">http://192.168.1.132:8080</string>
+    <string name="nav_biblioteca">Biblioteca</string>
+    <string name="nav_buscar">Buscar</string>
+    <string name="nav_playlists">Playlists</string>
+    <string name="nav_recomendados">Para ti</string>
+    <string name="playlists_vacia">Aún no tienes playlists.\nCrea una con el botón +</string>
+    <string name="recomendados_vacia">Reproduciendo algo para descubrir recomendaciones.</string>
+    <string name="servidor_titulo">Servidor</string>
+    <string name="sin_resultados">Sin resultados. Prueba con otra búsqueda.</string>
+    <string name="subtitulo_formatos">Disponible en estas fuentes</string>
+    <string name="titulo_formatos">Elige formato y calidad</string>
+    <style name="Theme.Sonora" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/primario</item>
+        <item name="colorOnPrimary">@color/texto</item>
+        <item name="colorSecondary">@color/acento</item>
+        <item name="android:colorBackground">@color/fondo</item>
+        <item name="colorSurface">@color/superficie</item>
+        <item name="colorOnSurface">@color/texto</item>
+        <item name="android:statusBarColor">@color/fondo</item>
+        <item name="android:navigationBarColor">@color/fondo</item>
+    </style>
+</resources>

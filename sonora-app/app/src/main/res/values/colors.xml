@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta de Sonora -->
+    <color name="primario">#8B5CF6</color>
+    <color name="primario_oscuro">#6D28D9</color>
+    <color name="acento">#22D3EE</color>
+    <color name="fondo">#0B0B12</color>
+    <color name="superficie">#16161F</color>
+    <color name="superficie_alta">#22222E</color>
+    <color name="texto">#F4F4F8</color>
+    <color name="texto_suave">#9A9AAE</color>
+    <color name="exito">#34D399</color>
+    <color name="error">#F87171</color>
+</resources>
