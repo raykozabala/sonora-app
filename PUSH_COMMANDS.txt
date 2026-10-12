@@ -1,0 +1,7 @@
+# Para subir el repo a GitHub (tú mismo desde terminal)
+
+cd "/Users/rayko/Documents/Proyecto predeterminado"
+git remote add origin https://github.com/raykozabala/sonora-app.git 2>/dev/null || git remote set-url origin https://github.com/raykozabala/sonora-app.git
+git push -u origin main
+
+# Si Git te pide token (recomendado hoy en día), usa Personal Access Token en lugar de contraseña
