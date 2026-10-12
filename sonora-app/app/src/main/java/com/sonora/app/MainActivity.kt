@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_biblioteca -> cambia(BibliotecaFragment())
                 R.id.nav_playlists -> cambia(PlaylistsFragment())
                 R.id.nav_recomendados -> cambia(RecomendadosFragment())
+                R.id.nav_ajustes -> cambia(AjustesFragment())
             }
             true
         }
@@ -69,7 +70,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        b.mini.root.setOnClickListener { PlayerManager.pausaOReanuda() }
+        b.mini.root.setOnClickListener {
+            if (PlayerManager.actual() != null) {
+                startActivity(android.content.Intent(this, PlayerFullActivity::class.java))
+            }
+        }
     }
 
     override fun onDestroy() {

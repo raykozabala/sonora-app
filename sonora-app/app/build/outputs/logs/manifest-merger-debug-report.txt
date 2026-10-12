@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:8:1-34:12
-INJECTED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:8:1-34:12
-INJECTED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:8:1-34:12
-INJECTED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:8:1-34:12
+ADDED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:8:1-38:12
+INJECTED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:8:1-38:12
+INJECTED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:8:1-38:12
+INJECTED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:8:1-38:12
 MERGED from [androidx.databinding:viewbinding:8.6.0] /Users/rayko/.gradle/caches/8.9/transforms/090b28d38900eeb6b87047095cc76613/transformed/viewbinding-8.6.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.12.0] /Users/rayko/.gradle/caches/8.9/transforms/c7f129c0e970d82f329fd4742ecc7e6f/transformed/material-1.12.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/rayko/.gradle/caches/8.9/transforms/ba8f0217e3e250827a1ea80da6a8ebb9/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
@@ -68,8 +68,8 @@ ADDED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/mai
 	android:name
 		ADDED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:11:22-76
 application
-ADDED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:13:5-32:19
-INJECTED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:13:5-32:19
+ADDED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:13:5-36:19
+INJECTED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:13:5-36:19
 MERGED from [com.google.android.material:material:1.12.0] /Users/rayko/.gradle/caches/8.9/transforms/c7f129c0e970d82f329fd4742ecc7e6f/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] /Users/rayko/.gradle/caches/8.9/transforms/c7f129c0e970d82f329fd4742ecc7e6f/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /Users/rayko/.gradle/caches/8.9/transforms/ba8f0217e3e250827a1ea80da6a8ebb9/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -122,6 +122,12 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:28:17-77
 	android:name
 		ADDED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:28:27-74
+activity#com.sonora.app.PlayerFullActivity
+ADDED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:32:9-34:40
+	android:exported
+		ADDED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:34:13-37
+	android:name
+		ADDED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml:33:13-47
 uses-sdk
 INJECTED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/rayko/Documents/Proyecto predeterminado/sonora-app/app/src/main/AndroidManifest.xml

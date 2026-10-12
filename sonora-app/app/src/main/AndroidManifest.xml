@@ -29,6 +29,10 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".PlayerFullActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>

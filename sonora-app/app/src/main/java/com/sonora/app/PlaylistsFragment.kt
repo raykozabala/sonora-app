@@ -55,16 +55,18 @@ class PlaylistsFragment : Fragment() {
 
     private fun pideNombre() {
         val campo = EditText(requireContext()).apply { hint = "Nombre de la playlist" }
-        AlertDialog.Builder(requireContext())
-            .setTitle("Nueva playlist")
+        com.google.android.material.dialog.MaterialAlertDialogBuilder(requireContext())
+            .setTitle("Crear nueva playlist")
+            .setMessage("Dale un nombre bonito a tu playlist")
             .setView(campo)
             .setPositiveButton("Crear") { _, _ ->
                 val nombre = campo.text?.toString()?.trim().orEmpty()
                 if (nombre.isEmpty()) {
-                    Toast.makeText(requireContext(), "Ponle un nombre", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "El nombre no puede estar vacío", Toast.LENGTH_SHORT).show()
                 } else {
                     val lista = Store.crearPlaylist(nombre)
                     refresca(lista)
+                    Toast.makeText(requireContext(), "Playlist creada", Toast.LENGTH_SHORT).show()
                 }
             }
             .setNegativeButton("Cancelar", null)

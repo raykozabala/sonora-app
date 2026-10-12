@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Menú de la barra de navegación inferior. -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <item
         android:id="@+id/nav_buscar"
         android:icon="@drawable/ic_search"
         android:title="@string/nav_buscar" />
-
     <item
         android:id="@+id/nav_biblioteca"
         android:icon="@drawable/ic_library"
         android:title="@string/nav_biblioteca" />
-
     <item
         android:id="@+id/nav_playlists"
         android:icon="@drawable/ic_playlist"
         android:title="@string/nav_playlists" />
-
     <item
         android:id="@+id/nav_recomendados"
         android:icon="@drawable/ic_star"
         android:title="@string/nav_recomendados" />
-
+    <item
+        android:id="@+id/nav_ajustes"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/nav_ajustes" />
 </menu>

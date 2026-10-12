@@ -7,6 +7,7 @@
     <string name="nav_biblioteca">Biblioteca</string>
     <string name="nav_playlists">Playlists</string>
     <string name="nav_recomendados">Para ti</string>
+    <string name="nav_ajustes">Ajustes</string>
 
     <!-- Buscar -->
     <string name="hint_buscar">Busca canciones, vídeos, artistas…</string>
