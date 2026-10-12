@@ -1,0 +1,14 @@
+# RENDER - EL MÁS DIRECTO AHORA MISMO
+
+1. Abre https://dashboard.render.com/
+2. Registrate/inicia con GitHub
+3. Clic "New +" → "Web Service"
+4. "Connect a repository" → elige raykozabala/sonora-app
+5. Debajo "Root Directory" escribe: servidor
+6. "Environment" deja Docker (Render lo detecta solo)
+7. Clic "Create Web Service" abajo
+8. Espera 2-3 minutos
+9. Te sale URL arriba: https://xxxx.onrender.com
+10. Abre app Sonora → Ajustes → pega esa URL → Guardar
+
+¡LISTO! Funciona con datos móviles. Repo YA existe.

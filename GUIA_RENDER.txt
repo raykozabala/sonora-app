@@ -1,0 +1,12 @@
+# Render (aún más fácil, 2-3 clicks)
+
+1. Ve a https://dashboard.render.com/
+2. Sign in con GitHub
+3. New → Web Service
+4. Connect repo: raykozabala/sonora-app
+5. Root Directory: servidor
+6. Runtime: Docker (detecta Dockerfile solo)
+7. Create Web Service
+8. Espera ~2 min → URL: https://sonora-xxxx.onrender.com
+9. Pónla en Ajustes de Sonora
+

@@ -1,0 +1,17 @@
+# GUÍA MÁS SENCILLA: Koyeb (1-2 clicks, SIN Oracle Cloud complicado)
+
+1. Ve a https://app.koyeb.com/
+2. Inicia sesión con GitHub
+3. Clic "Create App" → "GitHub"
+4. Selecciona repo: raykozabala/sonora-app
+5. Clic "Next"
+6. Build & Deployment:
+   - Build Type: Docker
+   - Root Directory: servidor
+   - Port: 8080
+7. Clic "Deploy"
+8. Espera ~1 min → te aparece URL: https://sonora-xxxx.koyeb.app
+9. Esa URL ponla en Ajustes de la app Sonora
+
+¡HECHO! No pide tarjeta. No VM. No SSH. Todo desde web.
+

@@ -1,0 +1,22 @@
+### SOLUCIÓN DEFINITIVA (gratis para siempre, 24/7, sin Mac encendido)
+
+Oracle Cloud Always Free = sin límite de 30 días, VM siempre activa.
+
+Pasos mínimos:
+
+1. Sube repo a GitHub (ejecuta en terminal):
+   cd "/Users/rayko/Documents/Proyecto predeterminado"
+   git push -u origin main
+
+2. Crea cuenta Oracle Cloud: https://www.oracle.com/cloud/free/
+3. Crea VM Ubuntu 22.04 (ARM A1 Flex recomendado - gratis)
+4. Abre puerto 8080 en Security Lists (0.0.0.0/0 TCP 8080)
+5. SSH: ssh ubuntu@TU_IP_PUBLICA
+6. Despliega automático:
+   curl -O https://raw.githubusercontent.com/raykozabala/sonora-app/main/setup-sonora.sh
+   chmod +x setup-sonora.sh
+   ./setup-sonora.sh
+
+7. Usa URL: http://TU_IP_PUBLICA:8080 en app Sonora
+
+Listo. Dura para siempre.
