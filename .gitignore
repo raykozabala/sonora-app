@@ -1,0 +1,21 @@
+# Artefactos de compilación (no deben subirse)
+sonora-app/app/build/
+android-app/app/build/
+sonora-app/.gradle/
+android-app/.gradle/
+sonora-app/.kotlin/
+android-app/.kotlin/
+**/build/
+
+# Descargas de prueba del servidor
+servidor/descargas/
+
+# Sistema
+.DS_Store
+*.log
+
+# Dependencias
+node_modules/
+
+# Credenciales
+.env
