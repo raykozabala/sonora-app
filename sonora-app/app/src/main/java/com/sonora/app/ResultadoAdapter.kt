@@ -30,6 +30,7 @@ class ResultadoAdapter(
         val titulo: TextView = v.findViewById(R.id.textoTitulo)
         val artista: TextView = v.findViewById(R.id.textoArtista)
         val fuente: TextView = v.findViewById(R.id.insigniaFuente)
+        val formato: TextView = v.findViewById(R.id.insigniaFormato)
         val duracion: TextView = v.findViewById(R.id.textoDuracion)
         val descargar: ImageView = v.findViewById(R.id.botonDescargar)
     }
@@ -46,6 +47,19 @@ class ResultadoAdapter(
         holder.titulo.text = r.title ?: "Sin título"
         holder.artista.text = r.uploader ?: "Desconocido"
         holder.fuente.text = r.source ?: "Web"
+
+        // Color del badge según la fuente
+        val ctx = holder.itemView.context
+        val (bg, txt) = when ((r.source ?: "").lowercase()) {
+            "youtube" -> android.graphics.Color.parseColor("#FF0033") to android.graphics.Color.WHITE
+            "youtube music" -> android.graphics.Color.parseColor("#FF0033") to android.graphics.Color.WHITE
+            "soundcloud" -> android.graphics.Color.parseColor("#FF5500") to android.graphics.Color.WHITE
+            "enlace directo" -> ctx.resources.getColor(R.color.acento) to android.graphics.Color.BLACK
+            else -> ctx.resources.getColor(R.color.primario) to android.graphics.Color.WHITE
+        }
+        holder.fuente.background.setTint(bg)
+        holder.fuente.setTextColor(txt)
+        holder.formato.text = "MP3 · MP4"
 
         val seg = r.duration?.toInt() ?: 0
         holder.duracion.text = PlayerManager.formatear(seg.toDouble())

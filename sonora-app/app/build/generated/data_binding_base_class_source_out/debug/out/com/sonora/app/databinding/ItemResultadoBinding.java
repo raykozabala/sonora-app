@@ -27,6 +27,9 @@ public final class ItemResultadoBinding implements ViewBinding {
   public final ImageView imagen;
 
   @NonNull
+  public final TextView insigniaFormato;
+
+  @NonNull
   public final TextView insigniaFuente;
 
   @NonNull
@@ -40,11 +43,13 @@ public final class ItemResultadoBinding implements ViewBinding {
 
   private ItemResultadoBinding(@NonNull MaterialCardView rootView,
       @NonNull ImageView botonDescargar, @NonNull ImageView imagen,
-      @NonNull TextView insigniaFuente, @NonNull TextView textoArtista,
-      @NonNull TextView textoDuracion, @NonNull TextView textoTitulo) {
+      @NonNull TextView insigniaFormato, @NonNull TextView insigniaFuente,
+      @NonNull TextView textoArtista, @NonNull TextView textoDuracion,
+      @NonNull TextView textoTitulo) {
     this.rootView = rootView;
     this.botonDescargar = botonDescargar;
     this.imagen = imagen;
+    this.insigniaFormato = insigniaFormato;
     this.insigniaFuente = insigniaFuente;
     this.textoArtista = textoArtista;
     this.textoDuracion = textoDuracion;
@@ -90,6 +95,12 @@ public final class ItemResultadoBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.insigniaFormato;
+      TextView insigniaFormato = ViewBindings.findChildViewById(rootView, id);
+      if (insigniaFormato == null) {
+        break missingId;
+      }
+
       id = R.id.insigniaFuente;
       TextView insigniaFuente = ViewBindings.findChildViewById(rootView, id);
       if (insigniaFuente == null) {
@@ -115,7 +126,7 @@ public final class ItemResultadoBinding implements ViewBinding {
       }
 
       return new ItemResultadoBinding((MaterialCardView) rootView, botonDescargar, imagen,
-          insigniaFuente, textoArtista, textoDuracion, textoTitulo);
+          insigniaFormato, insigniaFuente, textoArtista, textoDuracion, textoTitulo);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -25,7 +26,19 @@ public final class FragmentAjustesBinding implements ViewBinding {
   public final MaterialButton btnGuardarServidor;
 
   @NonNull
+  public final MaterialButton btnProbar;
+
+  @NonNull
+  public final TextView btnServidorMac;
+
+  @NonNull
+  public final TextView btnServidorNube;
+
+  @NonNull
   public final TextInputEditText editServidor;
+
+  @NonNull
+  public final TextView estadoServidor;
 
   @NonNull
   public final SwitchMaterial switchAhorro;
@@ -34,11 +47,17 @@ public final class FragmentAjustesBinding implements ViewBinding {
   public final SwitchMaterial switchOndas;
 
   private FragmentAjustesBinding(@NonNull ScrollView rootView,
-      @NonNull MaterialButton btnGuardarServidor, @NonNull TextInputEditText editServidor,
+      @NonNull MaterialButton btnGuardarServidor, @NonNull MaterialButton btnProbar,
+      @NonNull TextView btnServidorMac, @NonNull TextView btnServidorNube,
+      @NonNull TextInputEditText editServidor, @NonNull TextView estadoServidor,
       @NonNull SwitchMaterial switchAhorro, @NonNull SwitchMaterial switchOndas) {
     this.rootView = rootView;
     this.btnGuardarServidor = btnGuardarServidor;
+    this.btnProbar = btnProbar;
+    this.btnServidorMac = btnServidorMac;
+    this.btnServidorNube = btnServidorNube;
     this.editServidor = editServidor;
+    this.estadoServidor = estadoServidor;
     this.switchAhorro = switchAhorro;
     this.switchOndas = switchOndas;
   }
@@ -76,9 +95,33 @@ public final class FragmentAjustesBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnProbar;
+      MaterialButton btnProbar = ViewBindings.findChildViewById(rootView, id);
+      if (btnProbar == null) {
+        break missingId;
+      }
+
+      id = R.id.btnServidorMac;
+      TextView btnServidorMac = ViewBindings.findChildViewById(rootView, id);
+      if (btnServidorMac == null) {
+        break missingId;
+      }
+
+      id = R.id.btnServidorNube;
+      TextView btnServidorNube = ViewBindings.findChildViewById(rootView, id);
+      if (btnServidorNube == null) {
+        break missingId;
+      }
+
       id = R.id.editServidor;
       TextInputEditText editServidor = ViewBindings.findChildViewById(rootView, id);
       if (editServidor == null) {
+        break missingId;
+      }
+
+      id = R.id.estadoServidor;
+      TextView estadoServidor = ViewBindings.findChildViewById(rootView, id);
+      if (estadoServidor == null) {
         break missingId;
       }
 
@@ -94,8 +137,8 @@ public final class FragmentAjustesBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentAjustesBinding((ScrollView) rootView, btnGuardarServidor, editServidor,
-          switchAhorro, switchOndas);
+      return new FragmentAjustesBinding((ScrollView) rootView, btnGuardarServidor, btnProbar,
+          btnServidorMac, btnServidorNube, editServidor, estadoServidor, switchAhorro, switchOndas);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

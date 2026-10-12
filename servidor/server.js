@@ -106,6 +106,7 @@ async function getInfo(url) {
     uploader: j.uploader || j.channel || "Desconocido",
     duration: j.duration || 0,
     thumbnail: j.thumbnail || "",
+    album: j.album || j.playlist_title || "",
     webpage_url: j.webpage_url || url,
     view_count: j.view_count || 0,
   };
@@ -189,6 +190,62 @@ async function getRelated(url) {
     .slice(0, 25);
 }
 
+
+/* ---------- Letras sincronizadas (LRCLIB, gratuito y sin clave) ---------- */
+async function buscarLetras(titulo, artista, duracion) {
+  const base = "https://lrclib.net/api/search";
+  const params = new URLSearchParams({ track_name: titulo || "" });
+  if (artista) params.set("artist_name", artista);
+  try {
+    const resp = await fetch(base + "?" + params.toString(), {
+      headers: { "User-Agent": "SonoraApp/1.0 (uso personal)" },
+      signal: AbortSignal.timeout(8000),
+    });
+    if (!resp.ok) return null;
+    const arr = await resp.json();
+    if (!Array.isArray(arr) || arr.length === 0) return null;
+
+    // Elegimos la más parecida por duración (si sabemos) o la primera con letra sincronizada
+    let mejor = null, mejorPuntaje = -1;
+    for (const c of arr) {
+      let puntaje = 0;
+      if (c.syncedLyrics) puntaje += 10;
+      if (duracion && c.duration) {
+        const dif = Math.abs(Number(c.duration) - Number(duracion));
+        if (dif <= 2) puntaje += 6;
+        else if (dif <= 5) puntaje += 3;
+      }
+      if (artista && c.artistName &&
+          c.artistName.toLowerCase().includes((artista || "").toLowerCase())) puntaje += 4;
+      if (puntaje > mejorPuntaje) { mejorPuntaje = puntaje; mejor = c; }
+    }
+    if (!mejor) return null;
+    return {
+      fuente: "lrclib",
+      sync: mejor.syncedLyrics || null,
+      plain: mejor.plainLyrics || null,
+      album: mejor.albumName || null,
+      duracion: mejor.duration || null,
+    };
+  } catch (_) {
+    return null;
+  }
+}
+
+/* ---------- Estado / sondeo ---------- */
+function infoEstado() {
+  return {
+    ok: true,
+    nombre: "Sonora Server",
+    version: "2.0",
+    hora: new Date().toISOString(),
+    trabajos: jobs.size,
+    yt_dlp: YTDLP,
+    ffmpeg: FFMPEG || "no encontrado",
+    ip: primeraIp(),
+  };
+}
+
 /* ---------- Descarga ---------- */
 function startDownload(url, format, quality) {
   const id = "job" + (++jobCounter) + "_" + Date.now();
@@ -215,13 +272,23 @@ function startDownload(url, format, quality) {
       // Construimos los argumentos en orden correcto para yt-dlp.
       const args = ["--newline", "--no-playlist", "--no-warnings"];
 
+      // Metadatos y carátula embebidos (título, artista, álbum, portada)
+      const meta = [
+        "--embed-metadata", "--embed-thumbnail",
+        "--parse-metadata", "%(title)s:%(meta_title)s",
+        "--parse-metadata", "%(uploader|artist)s:%(meta_artist)s",
+      ];
+      args.push(...meta);
+
       if (format === "mp3") {
         args.push("-x", "--audio-format", "mp3", "--audio-quality", quality || "0");
         // Solo indicamos la ruta de ffmpeg si la hemos encontrado.
         if (FFMPEG) args.push("--ffmpeg-location", FFMPEG);
         args.push("-o", outBase + ".%(ext)s");
       } else {
-        args.push("-f", "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b", "--merge-output-format", "mp4", "-o", outBase + ".mp4");
+        args.push("-f", "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b",
+                  "--merge-output-format", "mp4",
+                  "-o", outBase + ".mp4");
       }
 
       args.push(url);
@@ -345,14 +412,43 @@ const server = http.createServer(async (req, res) => {
 
     // Búsqueda multi-fuente
     if (p === "/api/search" && req.method === "GET") {
-      const q = q_get(u, "q");
+      let q = q_get(u, "q");
       const limit = Math.min(parseInt(q_get(u, "limit") || "8", 10) || 8, 20);
       if (!q || q.trim().length < 2) return sendJSON(res, 400, { error: "Escribe al menos 2 letras." });
+
+      // Si pegan un enlace directo, devolvemos esa misma pista como resultado único
+      if (isValidUrl(q.trim())) {
+        const info = await getInfo(q.trim());
+        return sendJSON(res, 200, {
+          query: q,
+          results: [{
+            source: "Enlace directo",
+            id: info.id,
+            title: info.title,
+            uploader: info.uploader,
+            duration: info.duration,
+            thumbnail: info.thumbnail,
+            url: info.webpage_url,
+          }],
+        });
+      }
 
       const [yt, sc] = await Promise.all([
         searchSource("ytsearch", q, limit),
         searchSource("scsearch", q, limit),
       ]);
+
+      // Miniatura: si la fuente no la trae, la construimos (YouTube la tiene siempre).
+      const miniatura = (r, fuente) => {
+        if (r.thumbnail) return r.thumbnail;
+        if (r.thumbnails && Array.isArray(r.thumbnails) && r.thumbnails.length) {
+          return r.thumbnails[r.thumbnails.length - 1].url || "";
+        }
+        if (String(fuente).toLowerCase().startsWith("youtube") && r.id) {
+          return "https://i.ytimg.com/vi/" + r.id + "/hqdefault.jpg";
+        }
+        return "";
+      };
 
       const normalizar = (arr, fuente) => arr.map((r) => ({
         source: fuente,
@@ -360,7 +456,7 @@ const server = http.createServer(async (req, res) => {
         title: r.title || "Sin título",
         uploader: r.uploader || r.channel || "Desconocido",
         duration: r.duration || 0,
-        thumbnail: r.thumbnail || "",
+        thumbnail: miniatura(r, fuente),
         url: r.url || r.webpage_url || "",
       }));
 
@@ -390,10 +486,35 @@ const server = http.createServer(async (req, res) => {
           title: r.title || "Sin título",
           uploader: r.uploader || r.channel || "Desconocido",
           duration: r.duration || 0,
-          thumbnail: r.thumbnail || "",
+          thumbnail: r.thumbnail ||
+            (r.id ? "https://i.ytimg.com/vi/" + r.id + "/hqdefault.jpg" : ""),
           url: r.url || r.webpage_url || "",
         })),
       });
+    }
+
+    // Estado del servidor (sondeo rápido desde la app)
+    if (p === "/api/ping" && req.method === "GET") {
+      return sendJSON(res, 200, infoEstado());
+    }
+
+    // Letras sincronizadas (LRC) para una canción
+    if (p === "/api/lyrics" && req.method === "GET") {
+      const title = q_get(u, "title");
+      const artist = q_get(u, "artist");
+      const dur = parseFloat(q_get(u, "duration") || "0");
+      const url = q_get(u, "url");
+
+      if (!title && !url) return sendJSON(res, 400, { error: "Falta la canción." });
+
+      let t = title, a = artist, d = dur;
+      if (!title && url) {
+        const info = await getInfo(url);
+        t = info.title; a = info.uploader; d = info.duration;
+      }
+      const letras = await buscarLetras(t, a, d);
+      if (!letras) return sendJSON(res, 404, { error: "Sin letras para esa canción." });
+      return sendJSON(res, 200, { title: t, artist: a, ...letras });
     }
 
     // 5) Página de estado sencilla

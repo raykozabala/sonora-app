@@ -2,8 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/action_disco"
+        android:title="Ver disco"
+        android:icon="@drawable/ic_disc"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/action_ondas"
-        android:title="Vista disco/ondas"
-        android:icon="@drawable/ic_tune"
-        app:showAsAction="always" />
+        android:title="Ver ondas"
+        android:icon="@drawable/ic_equalizer"
+        app:showAsAction="ifRoom" />
 </menu>

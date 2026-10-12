@@ -12,6 +12,9 @@ object Store {
 
     const val SERVIDOR_POR_DEFECTO = "http://192.168.1.132:8080"
 
+    /** URL del servidor Node.js corriendo en tu Mac (misma WiFi). */
+    const val SERVIDOR_LOCAL = "http://192.168.1.132:8080"
+
     private const val PREFS = "sonora_prefs"
     private const val K_BIBLIOTECA = "biblioteca"
     private const val K_PLAYLISTS = "playlists"
@@ -50,6 +53,15 @@ object Store {
         return restante
     }
 
+    /* ---------- Preferencias del reproductor ---------- */
+
+    fun ahorroBateria(): Boolean = prefs.getBoolean("ahorro_bateria", false)
+
+    fun guardarAhorroBateria(context: Context, activo: Boolean) {
+        if (!::prefs.isInitialized) init(context)
+        prefs.edit().putBoolean("ahorro_bateria", activo).apply()
+    }
+
     /* ---------- Historial de búsquedas ---------- */
 
     fun historial(): List<String> {
@@ -86,6 +98,19 @@ object Store {
         lista.add(Playlist(id = "pl" + System.currentTimeMillis(), nombre = nombre.trim(), pistas = emptyList()))
         escribirPlaylists(lista)
         return lista
+    }
+
+    /** Crea una playlist y devuelve la recién creada. */
+    fun crearPlaylistNueva(nombre: String): Playlist {
+        val nueva = Playlist(
+            id = "pl" + System.currentTimeMillis(),
+            nombre = nombre.trim(),
+            pistas = emptyList()
+        )
+        val lista = playlists().toMutableList()
+        lista.add(nueva)
+        escribirPlaylists(lista)
+        return nueva
     }
 
     fun añadirAPlaylist(playlistId: String, pista: Pista): List<Playlist> {
@@ -144,7 +169,9 @@ object Store {
             source = o.optString("source"),
             filePath = o.optString("filePath"),
             format = o.optString("format"),
-            addedAt = o.optLong("addedAt").takeIf { it > 0 } ?: System.currentTimeMillis()
+            addedAt = o.optLong("addedAt").takeIf { it > 0 } ?: System.currentTimeMillis(),
+            album = o.optString("album"),
+            enlace = o.optString("enlace")
         )
     }
 
@@ -158,6 +185,8 @@ object Store {
         .put("filePath", p.filePath)
         .put("format", p.format)
         .put("addedAt", p.addedAt)
+        .put("album", p.album)
+        .put("enlace", p.enlace)
 }
 
 /** Playlist guardada localmente. */

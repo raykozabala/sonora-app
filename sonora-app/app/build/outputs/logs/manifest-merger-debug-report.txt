@@ -23,6 +23,8 @@ MERGED from [androidx.transition:transition:1.5.0] /Users/rayko/.gradle/caches/8
 MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/05ec72b822d3fdd1b7abd9ba7cd38b6a/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/rayko/.gradle/caches/8.9/transforms/746e637e42c5ea9cbec8e9460843532e/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/rayko/.gradle/caches/8.9/transforms/dea2c555fef026499d1071a623dd0e3a/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.palette:palette-ktx:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/5b33c5dda8bf9764a9256511ed315baf/transformed/palette-ktx-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.palette:palette:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/661bcf8534af13de28cb1f374e93365b/transformed/palette-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/c5f82fc1a49d26d34a1e1b7d93f92de9/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/f7bfb7cdb4cf7a66f79d989f22cff55a/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/553098a37d386daee3c0f555ecc4e9a6/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -170,6 +172,10 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/rayko
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/rayko/.gradle/caches/8.9/transforms/746e637e42c5ea9cbec8e9460843532e/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/rayko/.gradle/caches/8.9/transforms/dea2c555fef026499d1071a623dd0e3a/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/rayko/.gradle/caches/8.9/transforms/dea2c555fef026499d1071a623dd0e3a/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.palette:palette-ktx:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/5b33c5dda8bf9764a9256511ed315baf/transformed/palette-ktx-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.palette:palette-ktx:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/5b33c5dda8bf9764a9256511ed315baf/transformed/palette-ktx-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.palette:palette:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/661bcf8534af13de28cb1f374e93365b/transformed/palette-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.palette:palette:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/661bcf8534af13de28cb1f374e93365b/transformed/palette-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/c5f82fc1a49d26d34a1e1b7d93f92de9/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/c5f82fc1a49d26d34a1e1b7d93f92de9/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] /Users/rayko/.gradle/caches/8.9/transforms/f7bfb7cdb4cf7a66f79d989f22cff55a/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44

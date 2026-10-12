@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,7 +22,13 @@ public final class FragmentBibliotecaBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
+  public final LinearLayout barraDescarga;
+
+  @NonNull
   public final TextView contador;
+
+  @NonNull
+  public final ProgressBar indDescarga;
 
   @NonNull
   public final RecyclerView lista;
@@ -32,13 +39,25 @@ public final class FragmentBibliotecaBinding implements ViewBinding {
   @NonNull
   public final TextView titulo;
 
-  private FragmentBibliotecaBinding(@NonNull LinearLayout rootView, @NonNull TextView contador,
-      @NonNull RecyclerView lista, @NonNull TextView textoVacio, @NonNull TextView titulo) {
+  @NonNull
+  public final TextView txtDescargando;
+
+  @NonNull
+  public final TextView txtProgreso;
+
+  private FragmentBibliotecaBinding(@NonNull LinearLayout rootView,
+      @NonNull LinearLayout barraDescarga, @NonNull TextView contador,
+      @NonNull ProgressBar indDescarga, @NonNull RecyclerView lista, @NonNull TextView textoVacio,
+      @NonNull TextView titulo, @NonNull TextView txtDescargando, @NonNull TextView txtProgreso) {
     this.rootView = rootView;
+    this.barraDescarga = barraDescarga;
     this.contador = contador;
+    this.indDescarga = indDescarga;
     this.lista = lista;
     this.textoVacio = textoVacio;
     this.titulo = titulo;
+    this.txtDescargando = txtDescargando;
+    this.txtProgreso = txtProgreso;
   }
 
   @Override
@@ -68,9 +87,21 @@ public final class FragmentBibliotecaBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.barraDescarga;
+      LinearLayout barraDescarga = ViewBindings.findChildViewById(rootView, id);
+      if (barraDescarga == null) {
+        break missingId;
+      }
+
       id = R.id.contador;
       TextView contador = ViewBindings.findChildViewById(rootView, id);
       if (contador == null) {
+        break missingId;
+      }
+
+      id = R.id.indDescarga;
+      ProgressBar indDescarga = ViewBindings.findChildViewById(rootView, id);
+      if (indDescarga == null) {
         break missingId;
       }
 
@@ -92,8 +123,20 @@ public final class FragmentBibliotecaBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentBibliotecaBinding((LinearLayout) rootView, contador, lista, textoVacio,
-          titulo);
+      id = R.id.txtDescargando;
+      TextView txtDescargando = ViewBindings.findChildViewById(rootView, id);
+      if (txtDescargando == null) {
+        break missingId;
+      }
+
+      id = R.id.txtProgreso;
+      TextView txtProgreso = ViewBindings.findChildViewById(rootView, id);
+      if (txtProgreso == null) {
+        break missingId;
+      }
+
+      return new FragmentBibliotecaBinding((LinearLayout) rootView, barraDescarga, contador,
+          indDescarga, lista, textoVacio, titulo, txtDescargando, txtProgreso);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

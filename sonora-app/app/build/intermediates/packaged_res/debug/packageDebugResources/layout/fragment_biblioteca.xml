@@ -27,6 +27,57 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="4dp" />
 
+    <!-- Progreso de la descarga en curso -->
+    <LinearLayout
+        android:id="@+id/barraDescarga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="12dp"
+        android:visibility="gone"
+        android:background="@color/superficie"
+        android:padding="14dp"
+        android:paddingBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ProgressBar
+                android:id="@+id/indDescarga"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="100"
+                android:progressTint="@color/acento"
+                android:progressDrawable="@drawable/progress_bar_round" />
+
+            <TextView
+                android:id="@+id/txtProgreso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:textColor="@color/acento"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:text="0%" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtDescargando"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Descargando…"
+            android:textColor="@color/texto_suave"
+            android:textSize="12sp" />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lista"
         android:layout_width="match_parent"

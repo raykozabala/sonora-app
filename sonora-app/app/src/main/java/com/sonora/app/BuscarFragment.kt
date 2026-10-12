@@ -74,7 +74,9 @@ class BuscarFragment : Fragment() {
                 }
             } catch (e: Exception) {
                 b.cargando.visibility = View.GONE
-                b.textoVacio.text = "No se pudo conectar con el servidor.\n¿Está encendido en tu ordenador?"
+                b.textoVacio.text = "No se pudo conectar con el servidor.\n" +
+                    "URL actual: " + ApiClient.base + "\n" +
+                    "Revisa la pestaña Ajustes (guarda y pulsa Probar)."
                 b.textoVacio.visibility = View.VISIBLE
                 Toast.makeText(requireContext(), e.message, Toast.LENGTH_LONG).show()
             }
@@ -131,22 +133,24 @@ class BuscarFragment : Fragment() {
     }
 
     private fun descarga(enlace: String, formato: String, fuente: String) {
-        Toast.makeText(requireContext(), R.string.descargando, Toast.LENGTH_SHORT).show()
+        // Contexto de aplicación: evita que la app se cierre si el usuario
+        // cambia de pestaña antes de que termine la descarga.
+        val app = requireContext().applicationContext
+
+        Toast.makeText(app, R.string.descargando, Toast.LENGTH_SHORT).show()
 
         DescargaManager.descargarEnSegundoPlano(
-            requireContext().applicationContext,
+            app,
             enlace, formato, fuente,
-            listener = { _, progreso ->
-                // Un aviso breve; la barra real vive en la biblioteca
-                if (progreso % 25 == 0) Toast.makeText(requireContext(), "Descargando… $progreso%", Toast.LENGTH_SHORT).show()
-            },
+            listener = { _, progreso -> Descargas.notifica(progreso) },
             fin = { pista, error ->
                 if (pista != null) {
                     Store.añadirABiblioteca(pista)
-                    Toast.makeText(requireContext(), R.string.descarga_lista, Toast.LENGTH_LONG).show()
+                    Toast.makeText(app, R.string.descarga_lista, Toast.LENGTH_LONG).show()
                 } else {
-                    Toast.makeText(requireContext(), error ?: "Fallo", Toast.LENGTH_LONG).show()
+                    Toast.makeText(app, error ?: "Fallo", Toast.LENGTH_LONG).show()
                 }
+                Descargas.fin()
             }
         )
     }

@@ -33,15 +33,18 @@ class PlaylistsFragment : Fragment() {
                 if (pl.pistas.isEmpty()) {
                     Toast.makeText(requireContext(), "Esta playlist está vacía", Toast.LENGTH_SHORT).show()
                 } else {
-                    pl.pistas.forEach { Store.añadirABiblioteca(it) }
-                    PlayerManager.reproduce(pl.pistas.first())
-                    Toast.makeText(requireContext(), "Reproduciendo «${pl.nombre}»", Toast.LENGTH_SHORT).show()
+                    PlayerManager.reproduceLista(pl.pistas, 0)
+                    Toast.makeText(
+                        requireContext().applicationContext,
+                        "Reproduciendo «${pl.nombre}»",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             },
             alBorrar = { pl ->
                 val lista = Store.borrarPlaylist(pl.id)
                 refresca(lista)
-                Toast.makeText(requireContext(), "Playlist borrada", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext().applicationContext, "Playlist borrada", Toast.LENGTH_SHORT).show()
             }
         )
 
@@ -102,6 +105,7 @@ class AdaptadorPlaylists(
         val nombre: android.widget.TextView = v.findViewById(R.id.textoNombre)
         val cantidad: android.widget.TextView = v.findViewById(R.id.textoCantidad)
         val borrar: android.widget.ImageButton = v.findViewById(R.id.botonBorrar)
+        val icono: android.widget.ImageView = v.findViewById(R.id.iconoPlaylist)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
@@ -117,5 +121,22 @@ class AdaptadorPlaylists(
         holder.cantidad.text = if (pl.pistas.size == 1) "1 canción" else "${pl.pistas.size} canciones"
         holder.itemView.setOnClickListener { alAbrir(pl) }
         holder.borrar.setOnClickListener { alBorrar(pl) }
+
+        // Colores vivos que rotan para que la lista no se vea plana
+        val paleta = intArrayOf(
+            android.graphics.Color.parseColor("#8B5CF6"),
+            android.graphics.Color.parseColor("#22D3EE"),
+            android.graphics.Color.parseColor("#34D399"),
+            android.graphics.Color.parseColor("#F59E0B"),
+            android.graphics.Color.parseColor("#F87171"),
+            android.graphics.Color.parseColor("#60A5FA")
+        )
+        val color = paleta[position % paleta.size]
+        holder.icono.setColorFilter(color)
+        android.graphics.drawable.GradientDrawable().apply {
+            setColor((color and 0x00FFFFFF) or 0x33000000)
+            cornerRadius = 14f * holder.itemView.resources.displayMetrics.density
+            holder.icono.background = this
+        }
     }
 }

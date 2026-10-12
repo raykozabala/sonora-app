@@ -52,4 +52,7 @@ dependencies {
 
     // Carga de imágenes (carátulas)
     implementation 'io.coil-kt:coil:2.6.0'
+
+    // Colores dinámicos a partir de la carátula (fondo tipo Apple Music)
+    implementation 'androidx.palette:palette-ktx:1.0.0'
 }

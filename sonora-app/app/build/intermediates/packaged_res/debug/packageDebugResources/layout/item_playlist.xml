@@ -25,6 +25,7 @@
             android:layout_height="48dp"
             android:padding="10dp"
             android:background="@color/primario"
+            android:id="@+id/iconoPlaylist"
             android:src="@drawable/ic_playlist"
             android:contentDescription="Playlist"
             app:tint="@color/texto" />

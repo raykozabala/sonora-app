@@ -1,12 +1,79 @@
-# Render (aún más fácil, 2-3 clicks)
+# GUIA RENDER — Solución al error "Root directory does not exist"
 
-1. Ve a https://dashboard.render.com/
-2. Sign in con GitHub
-3. New → Web Service
-4. Connect repo: raykozabala/sonora-app
-5. Root Directory: servidor
-6. Runtime: Docker (detecta Dockerfile solo)
-7. Create Web Service
-8. Espera ~2 min → URL: https://sonora-xxxx.onrender.com
-9. Pónla en Ajustes de Sonora
+## ¿Qué pasó?
 
+El error:
+
+    ==> Root directory "servidor" does not exist.
+
+se producía porque en GitHub **solo había un archivo** (`setup-sonora.sh`,
+subido desde la web con "Add files via upload"). Todo el proyecto real
+(servidor, app, Dockerfile) estaba solo en tu Mac.
+
+**Ya está arreglado desde aquí:** todo el proyecto está listo para subirse
+a `https://github.com/raykozabala/sonora-app`. Solo falta autorizar el envío
+(paso 1 abajo) y darle a Render que vuelva a intentarlo (paso 3).
+
+---
+
+## PASO 1 — Autorizar el envío a GitHub (1 vez, 1 minuto)
+
+Abre la **App de Terminal** en tu Mac y pega esto, y dale Enter:
+
+```
+/opt/homebrew/bin/gh auth login --hostname github.com --git-protocol https --web
+```
+
+Te mostrará un código de 8 letras/números y abrirá el navegador.
+Entra con tu cuenta de GitHub, pega el código y acepta.
+
+Cuando diga "Logged in", avísame y yo subo todo el proyecto solo.
+
+---
+
+## PASO 2 — Yo subo el proyecto
+
+Tras el paso 1, yo ejecuto el push y GitHub tendrá la carpeta `servidor/`.
+
+---
+
+## PASO 3 — En Render: "Retry deploy"
+
+1. Entra en https://dashboard.render.com/ → tu servicio de Sonora
+2. Pestaña **Deploys** (o "Logs")
+3. Arriba a la derecha: **"Retry Deploy"** (o "Manual Deploy" → "Clear build cache & deploy")
+4. Espera 2-4 minutos
+
+Render ya encuentra la carpeta `servidor/` porque ahora sí existe en el repo.
+
+---
+
+## PASO 4 — Copiar la URL
+
+En la cabecera del servicio verás la URL pública, por ejemplo:
+
+    https://sonora-server-xxxx.onrender.com
+
+---
+
+## PASO 5 — Poner la URL en la app
+
+1. Instala el APK `APKs/Sonora-v3.apk`
+2. Abre Sonora → pestaña **Ajustes** (último icono abajo)
+3. Pega la URL de Render
+4. Toca **Guardar** y luego **Probar**
+5. Debería decir: `✅ Conectado` con yt-dlp y ffmpeg
+
+Con eso ya funciona con **datos móviles**, sin tener el Mac encendido.
+
+---
+
+## Notas
+
+- **Hibernación:** el plan gratuito de Render duerme el servicio tras 15 min
+  sin uso. Al abrir Sonora y buscar, tarda ~20-40 s la primera vez y ya
+  responde. Es normal y gratuito.
+- **También funciona con WiFi de casa:** usa la misma URL pública de Render.
+- **Opcional:** si prefieres usar tu Mac en la misma WiFi (más rápido),
+  arranca `node servidor/server.js` y usa `http://192.168.1.132:8080` en
+  Ajustes. Puedes cambiar entre una y otra cuando quieras.

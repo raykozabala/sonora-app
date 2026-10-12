@@ -1,59 +1,47 @@
 [
     {
-        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_fragment_recomendados.xml.flat",
-        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/fragment_recomendados.xml"
-    },
-    {
         "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_add.xml.flat",
         "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_add.xml"
     },
     {
-        "merged": "com.sonora.app-debug-34:/layout_dialog_crear_playlist.xml.flat",
-        "source": "com.sonora.app-main-36:/layout/dialog_crear_playlist.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_tune.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_tune.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/anim_slide_down_out.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/anim/slide_down_out.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_fullscreen.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_fullscreen.xml"
     },
     {
         "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_item_resultado.xml.flat",
         "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/item_resultado.xml"
     },
     {
-        "merged": "com.sonora.app-debug-34:/menu_player_menu.xml.flat",
-        "source": "com.sonora.app-main-36:/menu/player_menu.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/anim_slide_up_bottom.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/anim/slide_up_bottom.xml"
     },
     {
-        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_library.xml.flat",
-        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_library.xml"
-    },
-    {
-        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_activity_main.xml.flat",
-        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/activity_main.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_dialog_crear_playlist.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/dialog_crear_playlist.xml"
     },
     {
         "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_playlist.xml.flat",
         "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_playlist.xml"
     },
     {
-        "merged": "com.sonora.app-debug-34:/drawable_ic_lyrics.xml.flat",
-        "source": "com.sonora.app-main-36:/drawable/ic_lyrics.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_progress_bar_round.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/progress_bar_round.xml"
     },
     {
-        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_launcher.xml.flat",
-        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_launcher.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/anim_fade_slide_up.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/anim/fade_slide_up.xml"
     },
     {
-        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_descargar.xml.flat",
-        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_descargar.xml"
-    },
-    {
-        "merged": "com.sonora.app-debug-34:/drawable_bg_player_gradient.xml.flat",
-        "source": "com.sonora.app-main-36:/drawable/bg_player_gradient.xml"
-    },
-    {
-        "merged": "com.sonora.app-debug-34:/drawable_ic_fullscreen.xml.flat",
-        "source": "com.sonora.app-main-36:/drawable/ic_fullscreen.xml"
-    },
-    {
-        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_star.xml.flat",
-        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_star.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_expand.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_expand.xml"
     },
     {
         "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_fragment_playlists.xml.flat",
@@ -68,8 +56,104 @@
         "source": "com.sonora.app-main-36:/layout/fragment_ajustes.xml"
     },
     {
-        "merged": "com.sonora.app-debug-34:/drawable_ic_tune.xml.flat",
-        "source": "com.sonora.app-main-36:/drawable/ic_tune.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_item_pista.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/item_pista.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_item_recomendado.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/item_recomendado.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_bg_player_gradient.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/bg_player_gradient.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_battery.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_battery.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_bg_reproductor_inferior.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/bg_reproductor_inferior.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_item_letra.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/item_letra.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_lyrics.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_lyrics.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_settings.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_search.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_search.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_equalizer.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_equalizer.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_fragment_buscar.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/fragment_buscar.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_bg_badge_acento.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/bg_badge_acento.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/anim_layout_fade_in.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/anim/layout_fade_in.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_fragment_recomendados.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/fragment_recomendados.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_playlist_add.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_playlist_add.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_library.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_library.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_activity_main.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_fragment_ajustes.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/fragment_ajustes.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_launcher.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_disc.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_disc.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_bg_badge_primario.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/bg_badge_primario.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_descargar.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_descargar.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_edit.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_edit.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/menu_player_menu.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/menu/player_menu.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_star.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_star.xml"
     },
     {
         "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/menu_bottom_nav.xml.flat",
@@ -80,59 +164,39 @@
         "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/fragment_biblioteca.xml"
     },
     {
-        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_item_pista.xml.flat",
-        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/item_pista.xml"
-    },
-    {
-        "merged": "com.sonora.app-debug-34:/drawable_ic_expand.xml.flat",
-        "source": "com.sonora.app-main-36:/drawable/ic_expand.xml"
-    },
-    {
-        "merged": "com.sonora.app-debug-34:/menu_bottom_nav.xml.flat",
-        "source": "com.sonora.app-main-36:/menu/bottom_nav.xml"
-    },
-    {
-        "merged": "com.sonora.app-debug-34:/drawable_ic_settings.xml.flat",
-        "source": "com.sonora.app-main-36:/drawable/ic_settings.xml"
-    },
-    {
-        "merged": "com.sonora.app-debug-34:/menu_bottom_nav_new.xml.flat",
-        "source": "com.sonora.app-main-36:/menu/bottom_nav_new.xml"
-    },
-    {
-        "merged": "com.sonora.app-debug-34:/layout_activity_player_full.xml.flat",
-        "source": "com.sonora.app-main-36:/layout/activity_player_full.xml"
-    },
-    {
         "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_borrar.xml.flat",
         "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_borrar.xml"
     },
     {
-        "merged": "com.sonora.app-debug-34:/drawable_bg_round_primary.xml.flat",
-        "source": "com.sonora.app-main-36:/drawable/bg_round_primary.xml"
-    },
-    {
-        "merged": "com.sonora.app-debug-34:/drawable_ic_playlist_add.xml.flat",
-        "source": "com.sonora.app-main-36:/drawable/ic_playlist_add.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_speed.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_speed.xml"
     },
     {
         "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_include_mini_player.xml.flat",
         "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/include_mini_player.xml"
     },
     {
-        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_search.xml.flat",
-        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_search.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/menu_bottom_nav_new.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/menu/bottom_nav_new.xml"
     },
     {
-        "merged": "com.sonora.app-debug-34:/drawable_ic_close_full.xml.flat",
-        "source": "com.sonora.app-main-36:/drawable/ic_close_full.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_bg_badge.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/bg_badge.xml"
     },
     {
-        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_fragment_buscar.xml.flat",
-        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/fragment_buscar.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_bg_round_primary.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/bg_round_primary.xml"
     },
     {
-        "merged": "com.sonora.app-debug-34:/drawable_ic_speed.xml.flat",
-        "source": "com.sonora.app-main-36:/drawable/ic_speed.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_ic_close_full.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/ic_close_full.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/layout_activity_player_full.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/activity_player_full.xml"
+    },
+    {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-debug-34:/drawable_bg_chip.xml.flat",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/drawable/bg_chip.xml"
     }
 ]

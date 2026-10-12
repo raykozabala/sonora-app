@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-mergeDebugResources-33:/layout/item_letra.xml",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/item_letra.xml"
+    },
+    {
         "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-mergeDebugResources-33:/layout/fragment_playlists.xml",
         "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/fragment_playlists.xml"
     },
@@ -16,6 +20,10 @@
         "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/item_resultado.xml"
     },
     {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-mergeDebugResources-33:/layout/dialog_crear_playlist.xml",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/dialog_crear_playlist.xml"
+    },
+    {
         "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-mergeDebugResources-33:/layout/fragment_biblioteca.xml",
         "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/fragment_biblioteca.xml"
     },
@@ -24,8 +32,8 @@
         "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/include_mini_player.xml"
     },
     {
-        "merged": "com.sonora.app-mergeDebugResources-33:/layout/dialog_crear_playlist.xml",
-        "source": "com.sonora.app-main-36:/layout/dialog_crear_playlist.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-mergeDebugResources-33:/layout/activity_player_full.xml",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/activity_player_full.xml"
     },
     {
         "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-mergeDebugResources-33:/layout/item_playlist.xml",
@@ -40,11 +48,15 @@
         "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/activity_main.xml"
     },
     {
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-mergeDebugResources-33:/layout/item_recomendado.xml",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/item_recomendado.xml"
+    },
+    {
         "merged": "com.sonora.app-mergeDebugResources-33:/layout/fragment_ajustes.xml",
         "source": "com.sonora.app-main-36:/layout/fragment_ajustes.xml"
     },
     {
-        "merged": "com.sonora.app-mergeDebugResources-33:/layout/activity_player_full.xml",
-        "source": "com.sonora.app-main-36:/layout/activity_player_full.xml"
+        "merged": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-mergeDebugResources-33:/layout/fragment_ajustes.xml",
+        "source": "/Users/rayko/.gradle/daemon/8.9/com.sonora.app-main-36:/layout/fragment_ajustes.xml"
     }
 ]

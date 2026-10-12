@@ -137,6 +137,45 @@ object ApiClient {
         }
     }
 
+    /** Comprueba que el servidor está vivo y devuelve su información. */
+    suspend fun ping(): EstadoServidor {
+        val cuerpo = get("/api/ping")
+        val o = JSONObject(cuerpo)
+        return EstadoServidor(
+            ok = o.optBoolean("ok", false),
+            nombre = o.optString("nombre").takeIf { it.isNotBlank() },
+            version = o.optString("version").takeIf { it.isNotBlank() },
+            ytDlp = o.optString("yt_dlp").takeIf { it.isNotBlank() },
+            ffmpeg = o.optString("ffmpeg").takeIf { it.isNotBlank() },
+            ip = o.optString("ip").takeIf { it.isNotBlank() }
+        )
+    }
+
+    /**
+     * Letras sincronizadas (LRC) para una canción.
+     * Devuelve null si no hay.
+     */
+    suspend fun letras(titulo: String, artista: String, duracion: Double): Letras? =
+        try {
+            val cuerpo = get(
+                "/api/lyrics",
+                mapOf(
+                    "title" to titulo,
+                    "artist" to artista,
+                    "duration" to (duracion.toInt().toString())
+                )
+            )
+            val o = JSONObject(cuerpo)
+            Letras(
+                sync = o.optString("sync").takeIf { it.isNotBlank() },
+                plain = o.optString("plain").takeIf { it.isNotBlank() },
+                album = o.optString("album").takeIf { it.isNotBlank() },
+                fuente = o.optString("fuente").takeIf { it.isNotBlank() }
+            )
+        } catch (_: Exception) {
+            null
+        }
+
     suspend fun iniciarDescarga(enlace: String, formato: String, calidad: String = "0"): String {
         val json = JSONObject()
             .put("url", enlace)
@@ -159,7 +198,8 @@ object ApiClient {
                 duration = it.optDouble("duration").takeIf { d -> !d.isNaN() },
                 thumbnail = it.optString("thumbnail").takeIf { s -> s.isNotBlank() },
                 webpage_url = it.optString("webpage_url").takeIf { s -> s.isNotBlank() },
-                view_count = it.optDouble("view_count").takeIf { d -> !d.isNaN() }
+                view_count = it.optDouble("view_count").takeIf { d -> !d.isNaN() },
+                album = it.optString("album").takeIf { s -> s.isNotBlank() }
             )
         }
         return Trabajo(

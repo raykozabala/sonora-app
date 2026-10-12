@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -12,7 +13,6 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -27,7 +27,7 @@ import java.lang.String;
 
 public final class ActivityPlayerFullBinding implements ViewBinding {
   @NonNull
-  private final CoordinatorLayout rootView;
+  private final FrameLayout rootView;
 
   @NonNull
   public final ImageButton btnAhorro;
@@ -36,13 +36,16 @@ public final class ActivityPlayerFullBinding implements ViewBinding {
   public final ImageButton btnAtras;
 
   @NonNull
+  public final ImageButton btnEditarLetras;
+
+  @NonNull
   public final MaterialButton btnGuardarLetras;
 
   @NonNull
   public final ImageButton btnLetras;
 
   @NonNull
-  public final ImageButton btnLetrasEdit;
+  public final MaterialButton btnMarcarLetra;
 
   @NonNull
   public final ImageButton btnPlayPause;
@@ -51,22 +54,25 @@ public final class ActivityPlayerFullBinding implements ViewBinding {
   public final ImageButton btnSiguiente;
 
   @NonNull
-  public final ImageButton btnVelocidad;
+  public final TextView btnVelocidad;
 
   @NonNull
   public final MaterialCardView caratulaCard;
 
   @NonNull
+  public final FrameLayout contenedorVista;
+
+  @NonNull
   public final EditText editLetras;
+
+  @NonNull
+  public final FrameLayout fondoDinamico;
 
   @NonNull
   public final ImageView imgCaratulaFull;
 
   @NonNull
   public final LinearLayout layoutDisco;
-
-  @NonNull
-  public final LinearLayout layoutLetras;
 
   @NonNull
   public final LinearLayout layoutLetrasEdit;
@@ -81,7 +87,13 @@ public final class ActivityPlayerFullBinding implements ViewBinding {
   public final MaterialToolbar toolbarPlayer;
 
   @NonNull
+  public final TextView txtAlbumFull;
+
+  @NonNull
   public final TextView txtArtistaFull;
+
+  @NonNull
+  public final TextView txtCola;
 
   @NonNull
   public final TextView txtDuracion;
@@ -90,51 +102,60 @@ public final class ActivityPlayerFullBinding implements ViewBinding {
   public final TextView txtPosicion;
 
   @NonNull
+  public final TextView txtSinLetras;
+
+  @NonNull
   public final TextView txtTituloFull;
 
   @NonNull
   public final WaveView waveView;
 
-  private ActivityPlayerFullBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull ImageButton btnAhorro, @NonNull ImageButton btnAtras,
+  private ActivityPlayerFullBinding(@NonNull FrameLayout rootView, @NonNull ImageButton btnAhorro,
+      @NonNull ImageButton btnAtras, @NonNull ImageButton btnEditarLetras,
       @NonNull MaterialButton btnGuardarLetras, @NonNull ImageButton btnLetras,
-      @NonNull ImageButton btnLetrasEdit, @NonNull ImageButton btnPlayPause,
-      @NonNull ImageButton btnSiguiente, @NonNull ImageButton btnVelocidad,
-      @NonNull MaterialCardView caratulaCard, @NonNull EditText editLetras,
+      @NonNull MaterialButton btnMarcarLetra, @NonNull ImageButton btnPlayPause,
+      @NonNull ImageButton btnSiguiente, @NonNull TextView btnVelocidad,
+      @NonNull MaterialCardView caratulaCard, @NonNull FrameLayout contenedorVista,
+      @NonNull EditText editLetras, @NonNull FrameLayout fondoDinamico,
       @NonNull ImageView imgCaratulaFull, @NonNull LinearLayout layoutDisco,
-      @NonNull LinearLayout layoutLetras, @NonNull LinearLayout layoutLetrasEdit,
-      @NonNull RecyclerView recyclerLetras, @NonNull SeekBar seekBar,
-      @NonNull MaterialToolbar toolbarPlayer, @NonNull TextView txtArtistaFull,
-      @NonNull TextView txtDuracion, @NonNull TextView txtPosicion, @NonNull TextView txtTituloFull,
-      @NonNull WaveView waveView) {
+      @NonNull LinearLayout layoutLetrasEdit, @NonNull RecyclerView recyclerLetras,
+      @NonNull SeekBar seekBar, @NonNull MaterialToolbar toolbarPlayer,
+      @NonNull TextView txtAlbumFull, @NonNull TextView txtArtistaFull, @NonNull TextView txtCola,
+      @NonNull TextView txtDuracion, @NonNull TextView txtPosicion, @NonNull TextView txtSinLetras,
+      @NonNull TextView txtTituloFull, @NonNull WaveView waveView) {
     this.rootView = rootView;
     this.btnAhorro = btnAhorro;
     this.btnAtras = btnAtras;
+    this.btnEditarLetras = btnEditarLetras;
     this.btnGuardarLetras = btnGuardarLetras;
     this.btnLetras = btnLetras;
-    this.btnLetrasEdit = btnLetrasEdit;
+    this.btnMarcarLetra = btnMarcarLetra;
     this.btnPlayPause = btnPlayPause;
     this.btnSiguiente = btnSiguiente;
     this.btnVelocidad = btnVelocidad;
     this.caratulaCard = caratulaCard;
+    this.contenedorVista = contenedorVista;
     this.editLetras = editLetras;
+    this.fondoDinamico = fondoDinamico;
     this.imgCaratulaFull = imgCaratulaFull;
     this.layoutDisco = layoutDisco;
-    this.layoutLetras = layoutLetras;
     this.layoutLetrasEdit = layoutLetrasEdit;
     this.recyclerLetras = recyclerLetras;
     this.seekBar = seekBar;
     this.toolbarPlayer = toolbarPlayer;
+    this.txtAlbumFull = txtAlbumFull;
     this.txtArtistaFull = txtArtistaFull;
+    this.txtCola = txtCola;
     this.txtDuracion = txtDuracion;
     this.txtPosicion = txtPosicion;
+    this.txtSinLetras = txtSinLetras;
     this.txtTituloFull = txtTituloFull;
     this.waveView = waveView;
   }
 
   @Override
   @NonNull
-  public CoordinatorLayout getRoot() {
+  public FrameLayout getRoot() {
     return rootView;
   }
 
@@ -171,6 +192,12 @@ public final class ActivityPlayerFullBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnEditarLetras;
+      ImageButton btnEditarLetras = ViewBindings.findChildViewById(rootView, id);
+      if (btnEditarLetras == null) {
+        break missingId;
+      }
+
       id = R.id.btnGuardarLetras;
       MaterialButton btnGuardarLetras = ViewBindings.findChildViewById(rootView, id);
       if (btnGuardarLetras == null) {
@@ -183,9 +210,9 @@ public final class ActivityPlayerFullBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnLetrasEdit;
-      ImageButton btnLetrasEdit = ViewBindings.findChildViewById(rootView, id);
-      if (btnLetrasEdit == null) {
+      id = R.id.btnMarcarLetra;
+      MaterialButton btnMarcarLetra = ViewBindings.findChildViewById(rootView, id);
+      if (btnMarcarLetra == null) {
         break missingId;
       }
 
@@ -202,7 +229,7 @@ public final class ActivityPlayerFullBinding implements ViewBinding {
       }
 
       id = R.id.btnVelocidad;
-      ImageButton btnVelocidad = ViewBindings.findChildViewById(rootView, id);
+      TextView btnVelocidad = ViewBindings.findChildViewById(rootView, id);
       if (btnVelocidad == null) {
         break missingId;
       }
@@ -213,11 +240,19 @@ public final class ActivityPlayerFullBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.contenedorVista;
+      FrameLayout contenedorVista = ViewBindings.findChildViewById(rootView, id);
+      if (contenedorVista == null) {
+        break missingId;
+      }
+
       id = R.id.editLetras;
       EditText editLetras = ViewBindings.findChildViewById(rootView, id);
       if (editLetras == null) {
         break missingId;
       }
+
+      FrameLayout fondoDinamico = (FrameLayout) rootView;
 
       id = R.id.imgCaratulaFull;
       ImageView imgCaratulaFull = ViewBindings.findChildViewById(rootView, id);
@@ -228,12 +263,6 @@ public final class ActivityPlayerFullBinding implements ViewBinding {
       id = R.id.layoutDisco;
       LinearLayout layoutDisco = ViewBindings.findChildViewById(rootView, id);
       if (layoutDisco == null) {
-        break missingId;
-      }
-
-      id = R.id.layoutLetras;
-      LinearLayout layoutLetras = ViewBindings.findChildViewById(rootView, id);
-      if (layoutLetras == null) {
         break missingId;
       }
 
@@ -261,9 +290,21 @@ public final class ActivityPlayerFullBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.txtAlbumFull;
+      TextView txtAlbumFull = ViewBindings.findChildViewById(rootView, id);
+      if (txtAlbumFull == null) {
+        break missingId;
+      }
+
       id = R.id.txtArtistaFull;
       TextView txtArtistaFull = ViewBindings.findChildViewById(rootView, id);
       if (txtArtistaFull == null) {
+        break missingId;
+      }
+
+      id = R.id.txtCola;
+      TextView txtCola = ViewBindings.findChildViewById(rootView, id);
+      if (txtCola == null) {
         break missingId;
       }
 
@@ -279,6 +320,12 @@ public final class ActivityPlayerFullBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.txtSinLetras;
+      TextView txtSinLetras = ViewBindings.findChildViewById(rootView, id);
+      if (txtSinLetras == null) {
+        break missingId;
+      }
+
       id = R.id.txtTituloFull;
       TextView txtTituloFull = ViewBindings.findChildViewById(rootView, id);
       if (txtTituloFull == null) {
@@ -291,11 +338,11 @@ public final class ActivityPlayerFullBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityPlayerFullBinding((CoordinatorLayout) rootView, btnAhorro, btnAtras,
-          btnGuardarLetras, btnLetras, btnLetrasEdit, btnPlayPause, btnSiguiente, btnVelocidad,
-          caratulaCard, editLetras, imgCaratulaFull, layoutDisco, layoutLetras, layoutLetrasEdit,
-          recyclerLetras, seekBar, toolbarPlayer, txtArtistaFull, txtDuracion, txtPosicion,
-          txtTituloFull, waveView);
+      return new ActivityPlayerFullBinding((FrameLayout) rootView, btnAhorro, btnAtras,
+          btnEditarLetras, btnGuardarLetras, btnLetras, btnMarcarLetra, btnPlayPause, btnSiguiente,
+          btnVelocidad, caratulaCard, contenedorVista, editLetras, fondoDinamico, imgCaratulaFull,
+          layoutDisco, layoutLetrasEdit, recyclerLetras, seekBar, toolbarPlayer, txtAlbumFull,
+          txtArtistaFull, txtCola, txtDuracion, txtPosicion, txtSinLetras, txtTituloFull, waveView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

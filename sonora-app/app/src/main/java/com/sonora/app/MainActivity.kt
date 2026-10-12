@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import coil.load
 import com.sonora.app.databinding.ActivityMainBinding
 
 /**
@@ -39,6 +40,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun cambia(f: Fragment) {
         supportFragmentManager.beginTransaction()
+            .setCustomAnimations(
+                android.R.anim.fade_in,
+                android.R.anim.fade_out
+            )
             .replace(R.id.contenedor, f)
             .commit()
     }
@@ -49,7 +54,11 @@ class MainActivity : AppCompatActivity() {
                 b.mini.root.visibility = android.view.View.VISIBLE
                 b.mini.textoTitulo.text = pista.title
                 b.mini.textoArtista.text = pista.artist
-                b.mini.botonPlay.setImageResource(R.drawable.ic_library)
+                b.mini.imagenCaratula.load(pista.thumbnail) {
+                    crossfade(true)
+                    placeholder(android.R.color.darker_gray)
+                    error(android.R.color.darker_gray)
+                }
             } else {
                 b.mini.root.visibility = android.view.View.GONE
             }

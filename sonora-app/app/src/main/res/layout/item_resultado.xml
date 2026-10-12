@@ -75,7 +75,22 @@
                     android:paddingEnd="8dp"
                     android:paddingTop="3dp"
                     android:paddingBottom="3dp"
-                    android:background="@color/primario" />
+                    android:background="@drawable/bg_badge_primario" />
+
+                <TextView
+                    android:id="@+id/insigniaFormato"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#0B0B12"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingTop="3dp"
+                    android:paddingBottom="3dp"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/bg_badge"
+                    android:text="MP3 · MP4" />
 
                 <TextView
                     android:id="@+id/textoDuracion"

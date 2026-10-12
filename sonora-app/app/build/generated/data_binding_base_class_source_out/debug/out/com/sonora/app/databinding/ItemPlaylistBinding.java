@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,15 +25,20 @@ public final class ItemPlaylistBinding implements ViewBinding {
   public final ImageButton botonBorrar;
 
   @NonNull
+  public final ImageView iconoPlaylist;
+
+  @NonNull
   public final TextView textoCantidad;
 
   @NonNull
   public final TextView textoNombre;
 
   private ItemPlaylistBinding(@NonNull MaterialCardView rootView, @NonNull ImageButton botonBorrar,
-      @NonNull TextView textoCantidad, @NonNull TextView textoNombre) {
+      @NonNull ImageView iconoPlaylist, @NonNull TextView textoCantidad,
+      @NonNull TextView textoNombre) {
     this.rootView = rootView;
     this.botonBorrar = botonBorrar;
+    this.iconoPlaylist = iconoPlaylist;
     this.textoCantidad = textoCantidad;
     this.textoNombre = textoNombre;
   }
@@ -70,6 +76,12 @@ public final class ItemPlaylistBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.iconoPlaylist;
+      ImageView iconoPlaylist = ViewBindings.findChildViewById(rootView, id);
+      if (iconoPlaylist == null) {
+        break missingId;
+      }
+
       id = R.id.textoCantidad;
       TextView textoCantidad = ViewBindings.findChildViewById(rootView, id);
       if (textoCantidad == null) {
@@ -82,8 +94,8 @@ public final class ItemPlaylistBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemPlaylistBinding((MaterialCardView) rootView, botonBorrar, textoCantidad,
-          textoNombre);
+      return new ItemPlaylistBinding((MaterialCardView) rootView, botonBorrar, iconoPlaylist,
+          textoCantidad, textoNombre);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -92,7 +92,9 @@ object DescargaManager {
                 thumbnail = (info?.thumbnail ?: ""),
                 source = fuente,
                 filePath = destino.absolutePath,
-                format = formato
+                format = formato,
+                album = info?.album.orEmpty(),
+                enlace = info?.webpage_url.orEmpty()
             )
 
             withContext(Dispatchers.Main) {
